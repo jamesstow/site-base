@@ -1,0 +1,8 @@
+#!/bin/bash
+
+chown -R mysql:mysql /var/lib/mysql
+
+trap 'mysqladmin -u root -proot shutdown' EXIT
+
+mysqld_safe
+
