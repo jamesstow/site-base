@@ -25,4 +25,6 @@ buid/etc/service/varnish/run
 
 this is the file the init service watches, rename it anything other than "run" and varnish wont start.
 
-Note: obviously this means you will have to dick around with your nginx config as its bound to port 8080 here
+Note: obviously this means you will have to dick around with your nginx config as its bound to port 8080 here.
+
+Varnish listens to all port 80 traffic and forwards to nginx on port 8080
