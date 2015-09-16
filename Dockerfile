@@ -12,10 +12,11 @@ apt-get install \
 RUN curl https://repo.varnish-cache.org/debian/GPG-key.txt --insecure | apt-key add -
 RUN echo "deb https://repo.varnish-cache.org/debian/ wheezy varnish-4.0" >> /etc/apt/sources.list.d/varnish-cache.list
 RUN apt-get update && apt-get install varnish -y
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && mkdir -p /srv/www/
 
 EXPOSE 80
 
 ADD ./build/ /
 
 ADD ./src/varnish/ /etc/varnish/
+ADD ./src/web/ /srv/www/
