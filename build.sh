@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t site-base .
+docker build -t pwnasaur/site-base .
